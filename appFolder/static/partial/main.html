@@ -1,0 +1,140 @@
+
+<div class="container" ng-controller="submitCtrl">
+	<div>
+		<h1> Project Managment Accordion:</h1>
+	</div>
+	<br>
+	<accordion  ng-repeat="project in projects"> 
+		<accordion-group>
+			<accordion-heading>
+				<h3> <input class="myInput" size="{{project.nm}}" type="text" ng-model="project.nm"></h3>	
+			</accordion-heading>
+			<button ng-click="submitProject(project)" type="button" class="btn btn-primary postData"> Post Data </button>
+			<accordion>
+				<accordion-group>
+					<accordion-heading>
+						<h4> Project Description: </h4>
+					</accordion-heading> 
+					<textarea ng-model ="project.dsc"class="myTextarea"> {{project.dsc}} </textarea>
+				</accordion-group>
+			</accordion>
+			<accordion>
+				<accordion-group>
+					<accordion-heading>
+						<h4> Project Fields: </h4>
+					</accordion-heading>
+					<button ng-click="addField(project.field)" type="button" class="btn btn-primary postData"> Add Field </button>
+					<div ng-repeat="f in project.field"> 
+						<input class="myInput" size="{{f.nm.length}}" type="text" ng-model="f.nm">:
+						<input class="myInput" size="{{f.vl.length}}" type="text" ng-model= "f.vl">
+					</div>
+				</accordion-group>
+			</accordion>
+			<accordion>
+				<accordion-group>
+					<accordion-heading>
+						<h4> Project Notes: </h4>
+					</accordion-heading>
+					<button ng-click="addNote(project.note)" type="button" class="btn btn-primary postData">Add Note</button>
+					<div ng-repeat= "n in project.note">
+						<br/> Date: {{n.dt}} Note: {{n.txt}} User: {{n.usr}}
+					</div>
+				</accordion-group>
+			</accordion>
+			<accordion>
+				<accordion-group>
+					<accordion-heading>
+						<h4> Milestones: </h4>
+					</accordion-heading>
+					<button ng-click="addMilestone(project.milestone)" type="button" class="btn btn-primary postData"> Add Milestone </button>
+					<accordion ng-repeat="m in project.milestone">
+						<accordion-group>
+							<accordion-heading>
+								<h4> {{m.nm}} </h4>
+							</accordion-heading>
+								<accordion>
+									<accordion-group>
+										<accordion-heading>
+											<h5> Milestone Description: </h5>
+										</accordion-heading>
+									<textarea ng-model ="m.dsc" class="myTextarea"> {{m.dsc}} </textarea>
+									</accordion-group>
+								</accordion>
+								<accordion>
+									<accordion-group>
+										<accordion-heading>
+											<h5> Milestone Fields: </h5>
+										</accordion-heading>
+										<button ng-click="addField(m.field)" type="button" class="btn btn-primary postData"> Add Field </button>
+											<div ng-repeat="f in m.field">
+											<input class="myInput" size="{{f.nm.length}}" type="text" ng-model="f.nm">:
+											<input class="myInput" size="{{f.vl.length}}" type="text" ng-model="f.vl"> 
+											</div>
+									</accordion-group>
+								</accordion>
+								<accordion>
+									<accordion-group>
+										<accordion-heading>
+											<h5> Milestone Notes: </h5>
+										</accordion-heading>
+											<button ng-click="addNote(m.note)" type="button" class="btn btn-primary postData">Add Note</button>
+											<div ng-repeat="n in m.note"> 
+												Date: {{n.dt}} Note: {{n.txt}} User: {{n.usr}} <br/>
+											</div>
+									</accordion-group>
+								</accordion>
+								<accordion>
+									<accordion-group>
+										<accordion-heading>
+											<h5> Milestone Tasks: </h5>
+										</accordion-heading>
+											<accordion ng-repeat="t in m.task">
+												<accordion-group>
+													<accordion-heading>
+														{{t.nm}}
+													</accordion-heading>	
+														<accordion>
+															<accordion-group>
+																<accordion-heading>
+																	<h5>Task Description: </h5>
+																</accordion-heading>
+															<textarea ng-model ="t.dsc"class="myTextarea">	{{t.dsc}} </textarea>
+															</accordion-group>
+														</accordion>
+														<accordion>
+															<accordion-group>
+																<accordion-heading>
+																	<h5>Task Fields: </h5>
+																</accordion-heading>
+																<button ng-click="addField(t.field)" type="button" class="btn btn-primary postData"> Add Field </button>
+																<div ng-repeat="f in t.field"> 
+																	<input class="myInput" size="{{f.nm.length}}" type="text" ng-model="f.nm">:
+																	<input class="myInput" size="{{f.vl.length}}" type="text" ng-model="f.vl"> 
+																</div>
+															</accordion-group>
+														</accordion>
+														<accordion>
+															<accordion-group>
+																<accordion-heading>
+																	<h5>Task Notes: </h5>
+																</accordion-heading>
+																<button ng-click="addNote(t.note)" type="button" class="btn btn-primary postData">Add Note</button>
+																<div ng-repeat="n in t.note"> 
+																<br/>
+																	Date: {{n.dt}} Note: {{n.txt}} User: {{n.usr}}  
+																</div>
+															</accordion-group>
+														</accordion>
+												</accordion-group>
+											</accordion>
+									</accordion-group>
+								</accordion>
+						</accordion-group>
+					</accordion>
+				</accordion-group>
+			</accordion>
+		</accordion-group>
+	</accordion>
+</div>
+
+

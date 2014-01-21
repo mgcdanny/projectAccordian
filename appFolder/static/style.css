@@ -1,0 +1,27 @@
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+body {
+	padding-bottom: 40%;
+}
+
+.postData {
+	margin-bottom: 15px;
+}
+
+.myInput {
+	border: none;
+	font-family: Monaco, Consolas, "Lucida Console", monospace;
+	background-color: transparent;
+}
+
+h3 .myInput {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	background-color: transparent;
+}
+
+
+.myTextarea {
+	resize: none;
+	border: none;
+	width: 100%;
+}
