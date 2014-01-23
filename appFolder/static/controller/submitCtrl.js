@@ -2,6 +2,8 @@
 angular.module('angApp').controller('submitCtrl', ['$scope', '$http', function($scope, $http){
 
     $scope.project = {};
+    $scope.checked = true;
+    $scope.render = false;
 
     $scope.submitProject = function(project){
     	console.log(project)

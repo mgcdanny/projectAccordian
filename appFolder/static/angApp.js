@@ -6,9 +6,6 @@ app.config(['$routeProvider', function($routeProvider){
         when('/', {
             templateUrl: '/static/partial/main.html',
             controller: 'mainCtrl'
-        }).when('/test',{
-            templateUrl: '/static/partial/test.html',
-            controller: 'AccordionDemoCtrl'            
         }).otherwise({
             redirectTo: '/'
         });
